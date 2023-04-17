@@ -5,7 +5,8 @@ I DO NOT OWN ANY OF THE UI, ALL THE CREDIT GOES TO THE CREATOR OF LINORIA UI
 
 
 ## Load a string
-```local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+```
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
