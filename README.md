@@ -1,35 +1,37 @@
-# Linoria-Personal-Document
+
+# My Personal Linoria UI document
+
+I DO NOT OWN ANY OF THE UI, ALL THE CREDIT GOES TO THE CREATOR OF LINORIA UI
 
 
-# load a string
-local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
-
+## Load a string
+```local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
-
-# add a window
+```
+## Add a Window
+```
 local Window = Library:CreateWindow({
 
     Title = 'Zenith Hub:discord.gg/fSkWXPC74p',
     Center = true,
     AutoShow = true,
 })
-
-# add a tab
+```
+## Add A Tab
+```
 local Tabs = {
     Main = Window:AddTab('Main'), 
     ['UI Settings'] = Window:AddTab('UI Settings'),
 }
-
-# define group box
-
-LeftGroupBox:AddToggle('MyToggle', {
-    Text = 'This is a toggle',
-    Default = false,
-    Tooltip = 'This is a tooltip',
-})
-
+```
+## Define a group box side
+```
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
+```
+## Add a toggle
+```
 # add a toggle
 Toggles.MyToggle:OnChanged(function()
     _G.yoyo = Toggles.MyToggle.Value
@@ -37,38 +39,39 @@ Toggles.MyToggle:OnChanged(function()
 end)
 
 Toggles.MyToggle:SetValue(false)
-
-# add a button
+```
+## Add a button
+```
 local MyButton = LeftGroupBox:AddButton('Button', function()
     print('You clicked a button!')
 end)
-
-# add a sub button
-local MyButton2 = MyButton:AddButton('Sub button', function()
-    print('You clicked a sub button!')
-end)
-
-# add a label
+```
+## Add a label
+```
 LeftGroupBox:AddLabel('This is a label')
-LeftGroupBox:AddLabel('This is a label\n\nwhich wraps its text!', true)
-
-# add a divider
+```
+## Add a divider
+```
 LeftGroupBox:AddDivider()
-
-# add a watermark
+```
+## Add a watermark
+```
 Library:SetWatermarkVisibility(true)
 Library:SetWatermark('This is a really long watermark to text the resizing')
-
-# unload button
+```
+## Unload Button
+```
 Library:OnUnload(function()
     print('Unloaded!')
     Library.Unloaded = true
 end)
-
-# ui setting tab
+```
+## UI Setting
+```
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
-
-# last step
+```
+## Last Step
+```
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
 MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightControl', NoUI = true, Text = 'Menu keybind' }) 
 
@@ -87,3 +90,4 @@ SaveManager:SetFolder('Zenith Hub/Project Mugetsu')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
+```
