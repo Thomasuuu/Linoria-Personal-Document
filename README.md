@@ -39,6 +39,13 @@ LeftGroupBox:AddToggle('MyToggle', {
     Tooltip = 'This is a tooltip', -- Information shown when you hover over the toggle
 })
 
+function yoyo()
+    while _G.yoyo do
+        wait()
+        print("works")
+    end
+end
+
 Toggles.MyToggle:OnChanged(function()
     _G.yoyo = Toggles.MyToggle.Value
     yoyo()
