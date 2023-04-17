@@ -1,14 +1,14 @@
 # Linoria-Personal-Document
 
 
-#load a string
+# load a string
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
-#add a window
+# add a window
 local Window = Library:CreateWindow({
 
     Title = 'Zenith Hub:discord.gg/fSkWXPC74p',
