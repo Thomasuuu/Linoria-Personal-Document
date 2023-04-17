@@ -33,6 +33,12 @@ local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 ```
 ## Add a toggle
 ```
+LeftGroupBox:AddToggle('MyToggle', {
+    Text = 'This is a toggle',
+    Default = false,
+    Tooltip = 'This is a tooltip',
+})
+
 Toggles.MyToggle:OnChanged(function()
     _G.yoyo = Toggles.MyToggle.Value
     yoyo()
