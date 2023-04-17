@@ -5,8 +5,7 @@ I DO NOT OWN ANY OF THE UI, ALL THE CREDIT GOES TO THE CREATOR OF LINORIA UI
 
 
 ## Load a string
-```
-local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+```local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
@@ -33,12 +32,7 @@ local LeftGroupBox = Tabs.Main:AddLeftGroupbox('Groupbox')
 ```
 ## Add a toggle
 ```
-LeftGroupBox:AddToggle('MyToggle', {
-    Text = 'This is a toggle',
-    Default = false,
-    Tooltip = 'This is a tooltip',
-})
-
+# add a toggle
 Toggles.MyToggle:OnChanged(function()
     _G.yoyo = Toggles.MyToggle.Value
     yoyo()
@@ -50,6 +44,58 @@ Toggles.MyToggle:SetValue(false)
 ```
 local MyButton = LeftGroupBox:AddButton('Button', function()
     print('You clicked a button!')
+end)
+```
+## Add a Slider
+```
+LeftGroupBox:AddSlider('MySlider', {
+    Text = 'This is my slider!',
+
+    Default = 16,
+    Min = 0,
+    Max = 1000,
+    Rounding = 1,
+
+    Compact = false,
+})
+
+local Number = Options.MySlider.Value
+Options.MySlider:OnChanged(function()
+    print('MySlider was changed! New value:', Options.MySlider.Value)
+end)
+```
+## Add a Textbox
+```
+LeftGroupBox:AddInput('MyTextbox', {
+    Default = 'My textbox!',
+    Numeric = false,
+    Finished = false,
+
+    Text = 'This is a textbox',
+    Tooltip = 'This is a tooltip',
+
+    Placeholder = 'Placeholder text',
+})
+
+Options.MyTextbox:OnChanged(function()
+    print('Text updated. New text:', Options.MyTextbox.Value)
+end)
+```
+## Add a dropdown
+```
+LeftGroupBox:AddInput('MyTextbox', {
+    Default = 'My textbox!',
+    Numeric = false,
+    Finished = false,
+
+    Text = 'This is a textbox',
+    Tooltip = 'This is a tooltip',
+
+    Placeholder = 'Placeholder text',
+})
+
+Options.MyTextbox:OnChanged(function()
+    print('Text updated. New text:', Options.MyTextbox.Value)
 end)
 ```
 ## Add a label
