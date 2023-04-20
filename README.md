@@ -96,19 +96,17 @@ end)
 ```
 ## Add a dropdown
 ```
-LeftGroupBox:AddInput('MyTextbox', {
-    Default = 'My textbox!',
-    Numeric = false,
-    Finished = false,
+LeftGroupBox:AddDropdown('MyDropdown', {
+    Values = { 'This', 'is', 'a', 'dropdown' },
+    Default = 1, -- number index of the value / string
+    Multi = false, -- true / false, allows multiple choices to be selected
 
-    Text = 'This is a textbox',
-    Tooltip = 'This is a tooltip',
-
-    Placeholder = 'Placeholder text',
+    Text = 'A dropdown',
+    Tooltip = 'This is a tooltip', -- Information shown when you hover over the textbox
 })
 
-Options.MyTextbox:OnChanged(function()
-    print('Text updated. New text:', Options.MyTextbox.Value)
+Options.MyDropdown:OnChanged(function()
+    print('Dropdown got changed. New value:', Options.MyDropdown.Value)
 end)
 ```
 ## Add a label
