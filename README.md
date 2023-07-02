@@ -40,10 +40,12 @@ LeftGroupBox:AddToggle('MyToggle', {
 })
 
 function yoyo()
-    while _G.yoyo do
-        wait()
-        print("works")
-    end
+    spawn(function()
+        while _G.yoyo do
+            wait()
+            print("works")
+        end
+    end)
 end
 
 Toggles.MyToggle:OnChanged(function()
